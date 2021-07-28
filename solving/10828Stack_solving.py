@@ -1,9 +1,10 @@
+from collections import deque
 import sys
 input = sys.stdin.readline
 
 # .rstrip
 N = int(input())
-stack = []
+stack = deque()
 for _ in range(N):
     line = input().rstrip()
     if line[:4] == "push":
@@ -26,4 +27,3 @@ for _ in range(N):
             print(-1)
         else:
             print(stack[-1])
-    print(stack)

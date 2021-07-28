@@ -1,8 +1,9 @@
+from collections import deque
 import sys
 input = sys.stdin.readline
 
 N = int(input())
-queue = []
+queue = deque()
 
 for _ in range(N):
     command = input().rstrip()
@@ -14,7 +15,7 @@ for _ in range(N):
             print(-1)
         else:
             print(queue[0])
-            queue.pop(0)
+            queue.popleft()
     elif command[:4] == "size":
         print(len(queue))
     elif command[:5] == "empty":
